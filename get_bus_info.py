@@ -36,11 +36,12 @@ if __name__=='__main__':
         
         for i in buses:
             lat  = i['MonitoredVehicleJourney']['VehicleLocation']['Latitude']
-            long  = i['MonitoredVehicleJourney']['VehicleLocation']['Longitude']
+            #author note, long is reserved
+            lon  = i['MonitoredVehicleJourney']['VehicleLocation']['Longitude']
             if i['MonitoredVehicleJourney']['OnwardCalls'] == {}:
                 stop = 'N/A'
                 status = 'N/A'
             else:
                 StopName = i['MonitoredVehicleJourney']['OnwardCalls']['OnwardCall'][0]['StopPointName']
                 StopStatus = i['MonitoredVehicleJourney']['OnwardCalls']['OnwardCall'][0]['Extensions']['Distances']['PresentableDistance']
-            writer.writerow([lat,long,stop,status])
+            writer.writerow([lat,lon,stop,status])
