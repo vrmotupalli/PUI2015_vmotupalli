@@ -37,5 +37,6 @@ if __name__=='__main__':
     for i in range(len(buses)):
         locations = buses[i]['MonitoredVehicleJourney']["VehicleLocation"]
         lat = locations['Latitude']
-        long = locations['Longitude']
-        print ("Bus %i is at latitude %f and longitude %f" % (i, lat, long))
+         #author note, long is reserved
+        lon = locations['Longitude']
+        print ("Bus %i is at latitude %f and longitude %f" % (i, lat, lon))
